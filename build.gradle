@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.amethyst'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.xpdustry.com/releases' }
+}
+
+dependencies {
+    implementation "com.github.Anuken.Arc:arc-core:v150.1"
+    implementation "com.github.Anuken.Mindustry:core:v150.1"
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
